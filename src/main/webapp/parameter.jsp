@@ -11,6 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
         <meta http-equiv="refresh" content="1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" integrity="sha256-46qynGAkLSFpVbEBog43gvNhfrOj+BmwXdxFgVK/Kvc=" crossorigin="anonymous" />
     </head>
     <%
         String color="blue";
@@ -20,6 +21,12 @@
             "PaleGreen","MediumSpringGreen","Aqua","Turquoise","LightBlue",
             "DarkGrey","SlateGray","AntiqueWhite","Honeydew","Tan","BlanchedAlmond"
         };
+        String [] icons = new String[]{
+          "fa-angle-double-down", "fa-angle-double-left", "fa-angle-double-right",
+          "fa-angle-double-up", "fa-angle-down", "fa-angle-left", "fa-angle-right",
+          "fa-angle-up"
+        };
+        String icon = icons[(int)(Math.random()*1000%icons.length)];
         String parameter = request.getParameter("color");
         if(parameter!=null){
             color = parameter;
@@ -29,6 +36,6 @@
     %>
    
     <body bgcolor = "<%=color%>">
-        <h1>Hello World!</h1>
+        <span class="fa <%=icon%>"></span>
     </body>
 </html>
